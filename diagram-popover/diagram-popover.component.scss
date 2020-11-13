@@ -1,0 +1,38 @@
+@import '../../../tamalelibs/resources/styles/_theme.scss';
+
+.popover {
+    box-sizing: border-box;
+    width: 160px;
+    border: 1px solid $color-panel;
+    border-radius: 2.5px;
+    background-color: $color-panel;
+    box-shadow: 1px 1px 5px 1px $color-box-shadow;
+}
+
+.popover-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.popover-node-item {
+    padding: 6px 12px;
+
+    span {
+        color: $color-title;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 18px;
+    }
+
+    &:hover {
+        background-color: $color-item-hovering;
+    }
+
+    &.disabled {
+        background-color: $color-panel;
+
+        span {
+            color: $color-icon-disabled-light;
+        }
+    }
+}

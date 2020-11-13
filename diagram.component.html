@@ -1,0 +1,23 @@
+<div id="addcontent" class="dataContent container" value="1">
+    <div class="node-wrap start-node">
+        <div class="node-wrap-box">
+            <div class="node-wrap-body">Start</div>
+        </div>
+        <div class="add-node-btn-box">
+            <div class="add-node-btn">
+                <button #addButton class="btn" type="button" (click)="openPopover($event,addButton)">
+                    <span>+</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="nodes && nodes.roots && nodes.roots.length > 0">
+        <tam-diagram-node *ngFor="let node of nodes.roots" [nodeId]="node.guid"></tam-diagram-node>
+    </ng-container>
+    <div class="node-wrap end-node">
+        <div class="node-wrap-box">
+            <div class="node-wrap-body">End</div>
+        </div>
+    </div>
+</div>
+<tam-diagram-popover [popover]="popover"></tam-diagram-popover>

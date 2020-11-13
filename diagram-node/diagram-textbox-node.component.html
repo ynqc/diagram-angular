@@ -1,0 +1,29 @@
+<div class="node-wrap" kendoTooltip>
+    <div class="node-wrap-box">
+        <div class="node-wrap-body" (click)="onClickEvent($event)">
+            <div class="node-wrap-content-broder"
+                [ngClass]="{'background-color-error': !node.id || node.name.trim().length > 64}"></div>
+            <div class="node-wrap-content-input">
+                <input *ngIf="showInput" #valueInput [(ngModel)]="node.name" (blur)="onBlur($event)"
+                    (keydown)="onkeydown($event)" [class.input-error]="node.name.trim().length > 64" />
+                <div *ngIf="!showInput" class="span-name" (dblclick)="onDblclick()">
+                    <span [title]="node.name">{{node.name}}</span>
+                </div>
+            </div>
+            <div class="node-wrap-content-icon">
+                <smart-icon name="meatball"></smart-icon>
+            </div>
+        </div>
+    </div>
+    <div class="add-node-btn-box">
+        <div class="add-node-btn">
+            <button class="btn" type="button" #addButton (click)="node.addChild($event)">
+                <span>+</span>
+            </button>
+        </div>
+    </div>
+    <ng-container *ngIf="node.hasChildren()">
+        <tam-diagram-node *ngFor="let child of node.children" [nodeId]="child">
+        </tam-diagram-node>
+    </ng-container>
+</div>

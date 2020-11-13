@@ -1,0 +1,7 @@
+<ng-container *ngIf="node.type==='INPUT_TASK'">
+    <tam-diagram-textbox-node [nodeId]="node.guid">
+    </tam-diagram-textbox-node>
+</ng-container>
+<ng-container *ngIf="node.type==='PARALLEL_GATEWAY'">
+    <tam-diagram-branch-node [nodeId]="node.guid"></tam-diagram-branch-node>
+</ng-container>

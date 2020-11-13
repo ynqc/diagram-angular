@@ -1,0 +1,18 @@
+<kendo-popup [anchor]="anchor" *ngIf="isOpen">
+    <div class="popover" (click)="onClick($event)">
+        <div class="popover-content">
+            <div class="popover-node-item" (click)="addNode('INPUT_TASK')">
+                <span>Input Task</span>
+            </div>
+            <div class="popover-node-item disabled">
+                <span>Approval Task</span>
+            </div>
+            <div class="popover-node-item" (click)="addNode('PARALLEL_GATEWAY')">
+                <span>Parallel Gateway</span>
+            </div>
+            <div class="popover-node-item disabled">
+                <span>Exclusive Gateway</span>
+            </div>
+        </div>
+    </div>
+</kendo-popup>

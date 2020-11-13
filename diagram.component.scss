@@ -1,0 +1,131 @@
+@import '../../tamalelibs/resources/styles/_theme.scss';
+
+.container {
+    transform-origin: 0 0;
+}
+
+.add-node-btn-box {
+    width: 240px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    position: relative;
+}
+
+.add-node-btn-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin: auto;
+    width: 2px;
+    height: 100%;
+    background-color: $color-primary;
+}
+
+.add-node-btn {
+    user-select: none;
+    width: 240px;
+    padding: 20px 0 20px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.btn {
+    outline: none;
+    position: relative;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    background-color: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: bold;
+
+    span {
+        margin-top: -1px;
+    }
+}
+
+.node-wrap {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+
+}
+
+.node-wrap-box {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 40px;
+    width: 65px;
+    border-radius: 18px;
+    background-color: $color-primary;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.node-wrap-box:after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.node-wrap-body {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: $color-background-primary;
+}
+
+.node-approval {
+    background: #3296fa;
+}
+
+.dataContent {
+    overflow: inherit;
+    margin: 0 auto;
+}

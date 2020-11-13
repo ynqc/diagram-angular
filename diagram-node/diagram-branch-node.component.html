@@ -1,0 +1,51 @@
+<div class="branch-wrap">
+    <div class="branch-box-wrap">
+        <div class="branch-box">
+            <div class="add-branch add-branch-small">
+                <button class="btn branch-btn" type="button" (click)="node.addCondition($event)">
+                    <span>+</span>
+                </button>
+            </div>
+            <ng-container *ngIf="node.branchs && node.branchs.length > 0">
+                <div *ngFor="let branch of node.branchs; let i = index" class="col-box"
+                    (click)="onClickEvent($event, branch)">
+                    <div class="condition-node">
+                        <ng-container *ngIf="i===0">
+                            <div class="top-left-cover-line"></div>
+                            <div class="bottom-left-cover-line"></div>
+                        </ng-container>
+                        <div class="condition-node-box">
+                            <div class="add-node-btn">
+                                <div class="close-branch" (click)="node.destory($event, branch)">
+                                    <smart-icon name="close"></smart-icon>
+                                </div>
+                                <button class="btn" type="button" (click)="node.addChild($event, branch.guid)">
+                                    <span>+</span>
+                                </button>
+                            </div>
+                        </div>
+                        <ng-container *ngIf="i===node.branchs.length -1">
+                            <div class="top-right-cover-line"></div>
+                            <div class="bottom-right-cover-line"></div>
+                        </ng-container>
+                    </div>
+                    <ng-container *ngIf="node.hasChildren()">
+                        <tam-diagram-node *ngFor="let child of node.getConditionNodes(branch.guid)" [nodeId]="child">
+                        </tam-diagram-node>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="add-node-btn-box">
+        <div class="add-node-btn">
+            <button class="btn" type="button" #addButton_3 (click)="node.addChild($event, 'none')">
+                <span>+</span>
+            </button>
+        </div>
+    </div>
+    <ng-container *ngIf="node.hasChildren()">
+        <tam-diagram-node *ngFor="let child of node.getConditionNodes('none')" [nodeId]="child">
+        </tam-diagram-node>
+    </ng-container>
+</div>
